@@ -11,11 +11,11 @@ psycopg2 = "*"
 python-dotenv = "*"
 gunicorn = "*"
 pep8 = "*"
-django-jenkins = "*"
 pyflakes = "*"
+django-jenkins = "*"
+coverage = "==4.3.4"
 
 [dev-packages]
-coverage = "*"
 black = "*"
 django-debug-toolbar = "*"
 
