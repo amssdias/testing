@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [os.environ.get("ALLOWED_HOSTS", "*")]
 
 # Application definition
 DJANGO_APPS = [
+    'django_jenkins',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ DJANGO_APPS = [
 ]
 
 MY_PROJECT_APPS = [
-    'django_jenkins',
     'apps.accounts',
     'apps.foods',
 ]

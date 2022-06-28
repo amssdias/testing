@@ -10,7 +10,9 @@ redis = "*"
 psycopg2 = "*"
 python-dotenv = "*"
 gunicorn = "*"
+pep8 = "*"
 django-jenkins = "*"
+pyflakes = "*"
 
 [dev-packages]
 coverage = "*"
