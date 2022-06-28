@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}Registered Foods{% endblock %}
+
+{% block content %}
+
+
+    <div class="section-registered-foods">
+
+        <h2 class="heading-secondary margin-bottom-large">Registered Foods</h2>
+
+        <a class="btn btn-create margin-bottom-medium" href="{% url 'foods:food_consumed_create' %}">Register New food</a>
+
+
+        <section class="list-registered-foods">
+            {% for object in page_obj %}
+                <div class="registered-food">
+                    <a class="registered-food__link" href="{% url 'foods:registered_food_consumed_list' object.slug %}">
+                        
+                        <img class="registered-food__img" src="{% static 'images/banana.jpg' %}" alt="food">
+                        
+                        
+                        <div class="registered-food__details">
+
+                            <div class="registered-food__details__names">
+                                <p>{{ object.food.name }}</p>
+                                <p>{{ object.food.brand }}</p>
+                            </div>
+
+                            <a class="registered-food__details__delete-link" href="{% url 'foods:register_food_delete' object.slug %}">Delete Registered Food</a>
+                        </div>
+
+                        
+                    </a>
+                </div>
+            {% endfor %}
+            
+        </section>
+        {% include "components/pagination.html" %}
+    </div>
+{% endblock %}

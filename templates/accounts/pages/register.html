@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    <section class="section-login">
+
+        <div class="login">
+
+            <div class="login-header">
+                <h2 class="heading-secondary">Register Here</h2>
+                <p class="heading-secondary--sub">Haven't registered yet? Register now!</p>
+            </div>
+
+            <form action="{% url 'accounts:register' %}" method="POST" class="form login__form">
+                
+                {% include "components/messages.html" with messages=messages %}
+                {% csrf_token %}
+                {% for field in form %}
+                    <label class="login__form__label" for="{{ field.auto_id }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% include "components/error-messages.html" with errors=field.errors %}
+
+                {% endfor %}
+                
+                <button type="submit" class="btn btn-login margin-bottom-xsmall">{% translate "Register" %}</button>
+                
+                <a href="{% url 'accounts:login' %}" class="login__form__link margin-top-small">{% translate "Log in here" %}</a>
+
+            </form>
+        </div>
+
+        <div class="header">
+        </div>
+
+
+    </section>
+
+{% endblock %}
+<!-- 
+
+    <form action="{% url 'accounts:register' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <a href="{% url 'accounts:login' %}">Log in</a> -->
+

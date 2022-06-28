@@ -1,0 +1,6 @@
+{% load i18n %}
+{% if field.errors %}
+    {% for error in field.errors %}
+        <p class="message message-error margin-bottom-xsmall">{{ error }}</p>
+    {% endfor %}
+{% endif %}

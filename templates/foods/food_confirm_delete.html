@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Delete food{% endblock %}
+
+{% block content %}
+    <h1>Delete food (DELETE view)</h1>
+
+    <h2>Are you sure you want to delete {{ object }}?</h2>
+
+    {% if object.registered_by_users.all %}
+        <h1>Hey you have registered this food, if you delete, it will delete all registered foods.</h1>
+
+        {% for food_consumed in object.registered_by_users.all %}
+            <p>{{ food_consumed.food.name }}</p>
+        {% endfor %}
+    {% endif %}
+    
+    {% include 'components/form.html' with form=form btn_name='Delete' %}
+
+
+{% endblock %}

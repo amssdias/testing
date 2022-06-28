@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Delete this food?{% endblock %}
+
+{% block content %}
+    <h1>Delete food ated on {{ object.created }}</h1>
+
+    <h2>Are you sure you want to delete {{ object }}?</h2>
+    
+    {% include 'components/form.html' with form=form btn_name='Delete' %}
+
+{% endblock %}

@@ -1,0 +1,1 @@
+from calorie_counter.models.abstracts.timestampable import TimeStampable

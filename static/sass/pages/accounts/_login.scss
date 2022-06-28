@@ -1,0 +1,80 @@
+.section-login {
+    display: flex;
+    background-color: #f8fafc;
+    height: 90vh;
+}
+
+.login {
+    // border: 2px solid black;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-header {
+        // border: 2px solid red;
+        padding: 0rem 5rem;
+        width: 50%;
+    }
+
+    &__form {
+        padding: 2rem 5rem;
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        // border: 2px solid green;
+
+        &__label,
+        &__link {
+            font-size: 1.4rem;
+            font-weight: 999;
+        }
+
+        &__input {
+            font-size: 1.5rem;
+            font-family: inherit;
+            padding: 0.8rem 1.4rem;
+            height: 3.6rem;
+            border-radius: 0.5rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+        }
+
+        &__link {
+            align-self: flex-start;
+            // border: 1px solid black;
+            text-decoration: none;
+            color: black;
+        }
+
+        &__question &__link {
+            border-bottom: 0px solid black;
+        }
+
+        &__question &__link:hover {
+            border-bottom: 2px solid black;
+        }
+        
+        &__question &__link:active {
+            color: rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+        }
+
+        &__question {
+            font-size: 1.4rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+.header {
+    // border: 2px solid red;
+    flex-grow: 4;
+    background-image: url(../images/brocolli.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: moveInLeft;
+    animation-duration: 3s;
+}

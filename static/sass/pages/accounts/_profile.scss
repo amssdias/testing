@@ -1,0 +1,65 @@
+.section-profile {
+    padding: 0rem 20rem;
+    background-color: #f1f5f9;
+    height: 100vh;
+    background-image: url(../images/bg-1.jpg);
+    background-size: cover;
+}
+
+.profile {
+
+    // border: 2px solid green;
+    background-color: rgba(241, 245, 249, 0.8);
+    height: 100%;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 70%;
+
+        &__title {
+
+        }
+    }
+
+    &__image {
+        width: 22rem;
+        border-radius: 50%;
+        border: 0.5rem solid white;
+        box-shadow: -1rem 2rem 3rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &__form {
+        // border: 2px solid black;
+        padding: 5rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &__info_box {
+            // border: 2px solid red;
+            width: 70%;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 0.1rem solid #64748b;
+        }
+
+        &__label {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #475569;
+        }
+
+        &__input {
+            padding: 1.2rem 1.2rem;
+            font-size: 1.6rem;
+            width: 50%;
+            justify-self: flex-end;
+            border: 0.1rem solid rgba(255, 255, 255, 0.21);
+            border-radius: 1rem;
+        }
+    }
+}

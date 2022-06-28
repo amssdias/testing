@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Food details{% endblock %}
+
+{% block content %}
+    <h1>Food consumed Detail</h1>
+    <h2>{{ object.registered_food.food.name }}</h2>
+
+    <ul>
+
+        <li>Grams: {{ object.grams }}</li>
+        <li>Date: {{ object.created }}</li>
+        <li>Calories: {{ food_consumed_values.calories|floatformat }}</li>
+        <li>Total fat: {{ food_consumed_values.total_fat|floatformat }}</li>
+        <li>Carbs: {{ food_consumed_values.carbs|floatformat }}</li>
+        <li>Fiber: {{ food_consumed_values.fiber|floatformat }}</li>
+        <li>Protein: {{ food_consumed_values.protein|floatformat }}</li>
+        <li>Salt: {{ food_consumed_values.salt|floatformat }}</li>
+    </ul>
+
+{% endblock %}

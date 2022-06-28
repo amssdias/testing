@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="section-profile">
+
+        <div class="profile">
+
+            <div class="profile__heading">
+                
+                <img class="profile__image margin-top-small margin-left-small" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg" alt="">
+
+                <div class="profile__heading__title">
+                    <h1 class="heading-secondary">Profile</h1>
+                    <p class="paragraph">Update your photo and personal details.</p>
+                </div>
+                
+            </div>
+
+            <form class="profile__form" action="">
+                
+                <div class="profile__form__info_box margin-bottom-small">
+                    <label class="profile__form__label" for="">Email</label>
+                    <input class="profile__form__input" type="text" value="{{ profile.user.email }}">
+                </div>
+
+                <div class="profile__form__info_box margin-bottom-small">
+                    <label class="profile__form__label" for="">Weight</label>
+                    <input class="profile__form__input" type="text" value="{{ profile.weight }}">
+                </div>
+
+                <div class="profile__form__info_box margin-bottom-small">
+                    <label class="profile__form__label" for="">Weight target</label>
+                    <input class="profile__form__input" type="text" value="{{ profile.weight_target }}">
+                </div>
+
+                <!-- <label for="">Height</label>
+                <input type="text" value="{{ profile.user.email }}"> -->
+                <!-- <label for="">Age</label>
+                <input type="text" value="{{ profile.user.email }}"> -->
+
+                <button class="btn btn-secondary" type="submit">Save</button>
+
+            </form>
+
+
+
+
+
+            
+            <!-- <h2>Your weight</h2>
+            {{ profile }}
+            {% if profile.weight %}
+                <h5>{{ profile.weight|floatformat:2 }}</h5>
+            {% else %}
+                <h5>You haven't setup your weight.</h5>
+                <a href="">Setup your profile details.</a>
+            {% endif %}
+        
+        
+            <h2>What you got today</h2>
+        
+            <h3>Foods</h3>
+            <!-- TODO: Table displaying foods with his nutrition values -->
+            <!-- <ul>
+                <li>Rice</li>
+                <li>Juice</li>
+                <li>Chicken</li>
+            </ul>
+        
+            <a href="{% url 'foods:list_foods' %}">Check all foods</a>
+            <a href="#">View other day</a> -->
+
+
+        </div>
+
+        
+    </div>
+
+{% endblock %}

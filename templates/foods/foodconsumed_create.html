@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Create food{% endblock %}
+
+{% block content %}
+    <h1>Register how much you ate</h1>
+
+    {% include 'components/form.html' with form=form btn_name='Register' %}
+
+
+{% endblock %}

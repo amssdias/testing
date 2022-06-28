@@ -1,0 +1,71 @@
+.section-list-foods {
+    // border: 2px solid red;
+    padding: 5rem 20rem;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right bottom, rgba(226, 232, 240, 1), rgba(241, 245, 249, 0.8)),url(https://imgix.bustle.com/uploads/image/2020/5/19/f2207691-4c42-42a7-a670-f35d9d21af58-gettyimages-1173390260.jpg?w=1200&h=630&fit=crop&crop=faces&fm=jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.order_foods {
+    // border: 1px solid red;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    &__type {
+
+        text-decoration: none;
+
+        &__box {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0.8rem;
+        }
+
+    }
+}
+
+.list-foods {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.food {
+    // border: 2px solid green;
+    margin-right: 1rem;
+    padding: 1.6rem;
+
+    &__image {
+
+        width: 35rem;
+        height: 35rem;
+        object-fit: cover;
+
+        &__box {
+            // padding: 2rem;
+        }
+    }
+
+    &__details {
+
+        &__box {
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        &__title {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

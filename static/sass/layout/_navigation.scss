@@ -1,0 +1,15 @@
+.nav-bar {
+    height: 10vh;
+    padding: 0rem 6rem;
+    background-color: #1e293b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__link {
+        font-size: 1.4rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+    }
+}

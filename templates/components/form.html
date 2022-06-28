@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn btn-primary mt-4" type="submit" value="{{ btn_name }}">
+    </form>
+</div>

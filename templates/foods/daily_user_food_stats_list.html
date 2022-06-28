@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}All days{% endblock %}
+
+{% block content %}
+    <div class="section-list-foods-consumed">
+        <h1>List foods from everyday</h1>
+
+        {% include 'components/messages.html' with messages=messages %}
+    
+        <a href="{% url 'foods:food_consumed_create' %}">You ate some food? Register here. :)</a>
+    
+        {% for object in object_list %}
+    
+            <ul>
+                <li>Date: {{ object.date }}</li>
+                <li>Calories: {{ object.calories|floatformat }}</li>
+                <li>Total fat: {{ object.total_fat|floatformat }}</li>
+                <li>Carbs: {{ object.carbs|floatformat }}</li>
+                <li>Fiber: {{ object.fiber|floatformat }}</li>
+                <li>Protein: {{ object.protein|floatformat }}</li>
+                <li>Salt: {{ object.salt|floatformat }}</li>
+            </ul>
+    
+            <hr><hr>
+    
+        {% endfor %}
+    </div>
+
+{% endblock %}

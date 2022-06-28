@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}All foods{% endblock %}
+
+{% block content %}
+
+    <div class="section-list-foods">
+
+        <h2 class="heading-secondary margin-bottom-large">All foods</h2>
+
+        <a class="btn btn-create margin-bottom-medium" href="{% url 'foods:food_create' %}">Create new Food</a>
+
+        {% include 'components/messages.html' with messages=messages %}
+
+        <div class="order_foods">
+            <h3 class="heading-tertiary">Order by: </h3>
+            <div class="order_foods__type__box">
+                <a class="btn-link order_foods__type" href="{% url 'foods:list_foods' %}?ordering=name">Name</a>
+                <a class="btn-link order_foods__type" href="{% url 'foods:list_foods' %}?ordering=brand">Brand</a>
+                <a class="btn-link order_foods__type" href="{% url 'foods:list_foods' %}?ordering=-calories">Calories</a>
+                <a class="btn-link order_foods__type" href="{% url 'foods:list_foods' %}?ordering=-protein">Protein</a>
+            </div>
+        </div>
+
+        <div class="list-foods">
+            {% for object in page_obj %}
+                <div class="food margin-bottom-small">
+
+                    <div class="food__image__box">
+                        <img src="{% static 'images/banana.jpg' %}" alt="food" class="food__image">
+                    </div>
+    
+
+                    <h3 class="heading-tertiary margin-bottom-xsmall">{{ object.name }}</h3>
+
+                    
+                    <div class="food__details margin-bottom-small">
+
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Brand: </span>
+                            {{ object.brand }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Weight: </span>
+                            {{ object.weight }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Calories: </span>
+                            {{ object.calories }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Total fat: </span>
+                            {{ object.total_fat }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Carbs: </span>
+                            {{ object.carbs }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Fiber: </span>
+                            {{ object.fiber }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Protein: </span>
+                            {{ object.protein }}
+                        </p>
+                        <p class="food__details__box margin-bottom-xsmall">
+                            <span class="food__details__title">Salt: </span>
+                            {{ object.salt }}
+                        </p>
+                    </div>
+
+                    <div class="food__links">
+                        <a class="btn-link margin-bottom-xsmall" href="{% url 'foods:food_details' slug=object.slug %}">More details</a>
+                        <a class="btn-link" href="#">Register Food (TODO)</a>
+                        {% if object.created_by.user == request.user %}
+                            <a href="{% url 'foods:food_delete' slug=object.slug %}">Delete Food</a>
+                        {% endif %}
+
+                    </div>
+                    
+                    
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include "components/pagination.html" %}
+    </div>
+
+
+{% endblock %}

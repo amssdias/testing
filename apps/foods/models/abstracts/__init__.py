@@ -1,0 +1,1 @@
+from apps.foods.models.abstracts.food_nutrition import FoodNutrition

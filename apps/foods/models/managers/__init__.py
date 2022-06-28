@@ -1,0 +1,1 @@
+from apps.foods.models.managers.registered_food_manager import FoodConsumedManager

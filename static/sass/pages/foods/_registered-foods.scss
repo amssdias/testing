@@ -1,0 +1,78 @@
+.section-registered-foods {
+    // border: 2px solid red;
+    padding: 5rem 20rem;
+    
+    display: flex;
+    flex-direction: column;
+    
+    background-image: linear-gradient(to right bottom, rgba(226, 232, 240, 1), rgba(241, 245, 249, 0.8)),url(https://imgix.bustle.com/uploads/image/2020/5/19/f2207691-4c42-42a7-a670-f35d9d21af58-gettyimages-1173390260.jpg?w=1200&h=630&fit=crop&crop=faces&fm=jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    min-height: 90vh;
+}
+
+.list-registered-foods {
+    margin: 0rem -10rem;
+    padding: 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5rem 2rem;
+    // border: 2px solid green;
+
+}
+
+.registered-food {
+
+    // border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2rem 2rem 0rem 0rem;
+    background-color: rgba(241, 245, 249, 0.8);
+    box-shadow: 0.2rem -0.4rem 1rem 1rem rgba(0, 0, 0, 0.2);
+    
+    transition: 0.2s;
+
+    &:hover {
+        transform: translateY(-0.6rem);
+        box-shadow: 0.2rem -0.4rem 1rem 1rem rgba(0, 0, 0, 0.6);
+    }
+
+    &__link {
+        text-decoration: none;
+        transition: 0.2s;
+    }
+
+    &__img {
+        width: 30rem;
+        height: 25rem;
+        object-fit: cover;
+        border-radius: 2rem 2rem 0rem 0rem;
+    }
+
+    &__details {
+        padding: 1rem 1.6rem;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        &__names {
+            font-size: 1.4rem;
+            color: black;
+        }
+
+        &__delete-link {
+            color: black;
+            font-weight: 999;
+            text-decoration: none;
+            font-size: 1.2rem;
+            align-self: flex-end;
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}

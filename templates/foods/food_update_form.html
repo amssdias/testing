@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Update food{% endblock %}
+
+{% block content %}
+    <h1>Update Food Details</h1>
+    
+    {% include 'components/form.html' with form=form btn_name='Update food' %}
+
+{% endblock %}

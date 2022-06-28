@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Food consumed{% endblock %}
+
+{% block content %}
+    <h1>Food Consumed</h1>
+
+    {% include 'components/messages.html' with messages=messages %}
+
+    <a href="{% url 'foods:food_consumed_create' %}">You ate some food? Register here. :)</a>
+    <hr><hr>
+    
+    {% for object in object_list %}
+        <ul>
+            <li>{{ object.registered_food.food }}</li>
+            <li>{{ object.grams }} g</li>
+            <li>{{ object.get_meal_display }}</li>
+            <li>{{ object.created }}</li>
+        </ul>
+        <p>{{ object }}</p>
+        <a href="{% url 'foods:food_consumed_detail' pk=object.id %}">Check details of consumed food</a>
+        <a href="{% url 'foods:delete_food_consumed' pk=object.id %}">Delete food</a>
+        <hr>
+    {% endfor %}
+
+    {% include "components/pagination.html" %}
+
+    <br>
+{% endblock %}

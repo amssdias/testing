@@ -1,0 +1,41 @@
+name: Test all apps
+
+on:
+  push:
+    branches:
+      - master
+  
+jobs:
+  run_tests_accounts_app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run : |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run account app tests
+      run: |
+        python3 manage.py test apps/accounts --settings=calorie_counter.settings.test
+
+  run_tests_foods_app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run : |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run food app tests
+      run: |
+        python3 manage.py test apps/foods --settings=calorie_counter.settings.test

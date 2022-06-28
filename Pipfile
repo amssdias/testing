@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==3.2.13"
+celery = "*"
+redis = "*"
+psycopg2 = "*"
+python-dotenv = "*"
+gunicorn = "*"
+
+[dev-packages]
+coverage = "*"
+black = "*"
+django-debug-toolbar = "*"
+
+[requires]
+python_version = "3.9"
